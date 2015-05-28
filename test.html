@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var scopes = ['profile',
+        'https://www.googleapis.com/auth/compute.readonly',
+        'https://www.googleapis.com/auth/compute',
+        'https://www.googleapis.com/auth/cloud-platform'];
+
+    var clientId = '789653962745-p93sih0iq96s236om26kg4oat0hh0igt.apps.googleusercontent.com';
+
+    var appStart = function () {
+
+        var event = new Event('build');
+
+
+        document.addEventListener('build', function (e) {
+            console.log('build event loaded from doc');
+        });
+
+
+        document.dispatchEvent(event);
+        console.log('displatched ', event);
+
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: clientId,
+                scope: scopes.join(' ')
+            });
+        });
+
+        gapi.load('signin2', function () {
+            gapi.signin2.render('login-button', {
+                scope: scopes.join(' ')
+            });
+        });
+
+        gapi.client.load('compute', 'v1', function (a) {
+
+        });
+    };
+</script>
+<div id="login-button-area">
+    <span id="login-button"></span>
+</div>
+<script src="https://apis.google.com/js/client.js?onload=appStart" async defer></script>
+</body>
+</html>
