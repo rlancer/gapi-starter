@@ -57,7 +57,7 @@ module.exports = React.createClass({
                 return toggleLoginButton;
         }
         else {
-            return <div>Loading</div>
+            return <div>Loading...</div>
         }
     }
 });
