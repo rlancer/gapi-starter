@@ -1,4 +1,4 @@
-client_secret.json
 .idea
 node_modules
 *.iml
+gapi_app_settings.json

@@ -86,7 +86,6 @@ module.exports.gapiLoaded(function () {
         sign2Loaded = true;
     });
 
-
     var clientLoaded = function clientLoaded() {
         clientsLoaded++;
     }

@@ -1,4 +1,4 @@
-/* @flow */
+'use strict'
 
 require("./style.css");
 var React = require('react');
