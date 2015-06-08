@@ -1,5 +1,5 @@
-Google Login & API + ReactJS + Webpack starter kit
-==================================================
+Google Login & API + ReactJS + Flow + Webpack starter kit
+=========================================================
 
 Google API's are great but they were designed before the module partner of Javascript programing became popular.
 This starter fixes that handing Google login and library loading for you.
