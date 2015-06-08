@@ -11,8 +11,6 @@ var auth2;
 if (app_settings.scopes.indexOf('profile') === -1)
     app_settings.scopes.push('profile');
 
-console.log('app_settings.scopes', app_settings.scopes);
-
 module.exports = {
     clientsLoaded: function (callback) {
 
