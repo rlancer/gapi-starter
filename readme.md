@@ -4,9 +4,15 @@ Google Login & API + ReactJS + Webpack starter kit
 Google API's are great but they were designed before the module partner of Javascript programing became popular.
 This starter fixes that handing Google login and library loading for you.
 
+#Get the Code!
+
+    git clone https://github.com/rlancer/gapi-starter.git
+    cd gapi-starter
+
+
 #Add in your Project's Settings
 
-Create a file titled *app_settings.json* in the root directory.
+Create a file titled **app_settings.json** in the root directory.
 
 ```JSON
 {
@@ -44,5 +50,12 @@ Create a file titled *app_settings.json* in the root directory.
 ```
 
 
+#Run the Webpack Dev Server
 
+    webpack-dev-server --progress --colors --port 9030
 
+#Ensure that the Javascript Origin is Set
+
+In the (Google API Console)[https://console.developers.google.com]
+
+Under Credentials, make sure that the project has the proper Javascript origin set for both production and development. 
