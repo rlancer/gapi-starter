@@ -8,6 +8,7 @@ This starter fixes that handing Google login and library loading for you.
 
     git clone https://github.com/rlancer/gapi-starter.git
     cd gapi-starter
+    npm install
 
 
 #Add in your Project's Settings
