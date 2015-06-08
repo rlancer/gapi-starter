@@ -1,8 +1,6 @@
 'use strict'
 
 var React = require('react');
-var actions = require('../shared.js').actions;
-var emitter = actions.emitter;
 var googleApiLoader = require('../actions/GoogleAPILoader');
 
 

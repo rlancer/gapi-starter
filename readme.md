@@ -1,4 +1,3 @@
-Google API Starter
-==================
+Google API Starter + ReactJS starter
+====================================
 
-A bare bonse s

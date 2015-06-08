@@ -1,24 +1,17 @@
 'use strict'
 
-var secrets = require("json!./../client_secret.json");
+var app_settings = require("json!./../app_settings.json");
 
-var clientsToLoad = [
-    {name: 'compute', version: 'v1'},
-    {name: 'drive', version: 'v2'},
-    {name: 'gmail', version: 'v1'},
-    {name: 'calendar', version: 'v3'}];
-
-var scopes = ['profile',
-    'https://www.googleapis.com/auth/compute.readonly',
-    'https://www.googleapis.com/auth/compute',
-    'https://www.googleapis.com/auth/cloud-platform'];
-
-var clientId = secrets.google_api_key;
 var clientsLoaded = 0;
 
 var sign2Loaded = false;
 var auth2Loaded = false;
 var auth2;
+
+if (app_settings.scopes.indexOf('profile') === -1)
+    app_settings.scopes.push('profile');
+
+console.log('app_settings.scopes', app_settings.scopes);
 
 module.exports = {
     clientsLoaded: function (callback) {
@@ -26,7 +19,7 @@ module.exports = {
         var ids = 0;
 
         var check = function () {
-            if (ids++ > 1000 || clientsToLoad.length === clientsLoaded) {
+            if (ids++ > 1000 || app_settings.libraries.length === clientsLoaded) {
                 callback();
             }
             else {
@@ -76,8 +69,8 @@ module.exports.gapiLoaded(function () {
 
     gapi.load('auth2', function () {
         auth2 = gapi.auth2.init({
-            client_id: clientId,
-            scopes: scopes.join(' ')
+            client_id: app_settings.client_id,
+            scopes: app_settings.scopes.join(' ')
         });
         auth2Loaded = true;
     });
@@ -90,8 +83,8 @@ module.exports.gapiLoaded(function () {
         clientsLoaded++;
     }
 
-    for (var i = 0; i < clientsToLoad.length; i++) {
-        var client = clientsToLoad[i];
+    for (var i = 0; i < app_settings.libraries.length; i++) {
+        var client = app_settings.libraries[i];
         gapi.client.load(client.name, client.version, clientLoaded);
     }
 });
