@@ -8,6 +8,7 @@
   "dependencies": {
     "autoprefixer-core": "^5.1.11",
     "autoprefixer-loader": "^1.2.0",
+    "css-loader": "^0.14.4",
     "flow": "^0.2.3",
     "flowcheck": "^0.2.6",
     "flowcheck-loader": "^1.0.0",
