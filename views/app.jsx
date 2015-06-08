@@ -16,7 +16,6 @@ module.exports = React.createClass({
 
             googleApiLoader.getAuth2().currentUser.listen(function (user) {
                 _this.setState({finishedLoading: true});
-                _this.setState({isLoggedIn: user.getBasicProfile() ? true : false});
                 if (user.getBasicProfile()) {
                     var profile = user.getBasicProfile();
                     var profileProxy = {};
@@ -26,6 +25,7 @@ module.exports = React.createClass({
                     profileProxy.email = profile.getEmail();
                     _this.setState({loggedInUser: profileProxy});
                 }
+                _this.setState({isLoggedIn: user.getBasicProfile() ? true : false});
             });
         });
 
@@ -49,7 +49,13 @@ module.exports = React.createClass({
         if (this.state.finishedLoading) {
 
             if (this.state.isLoggedIn) {
-                return <div>{loggedInUserThumb}</div>
+
+                return <div>
+                {loggedInUserThumb}
+                {this.state.loggedInUser.name}
+                    <hr />
+                    You're now free to use the Google APIs!
+                </div>
             }
             else
                 return toggleLoginButton;
