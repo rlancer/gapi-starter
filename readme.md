@@ -56,6 +56,6 @@ Create a file titled **app_settings.json** in the root directory.
 
 #Ensure that the Javascript Origin is Set
 
-In the (Google API Console)[https://console.developers.google.com]
+In the [Google API Console](https://console.developers.google.com)
 
-Under Credentials, make sure that the project has the proper Javascript origin set for both production and development. 
+Under Credentials, make sure that the project has the proper Javascript origin set for both production and development.
