@@ -59,6 +59,16 @@ module.exports = {
     },
     getAuth2: function () {
         return auth2;
+    },
+    signIn: function () {
+
+        var options = new gapi.auth2.SigninOptionsBuilder({
+            scopes: app_settings.scopes.join(' ')
+        });
+
+        this.getAuth2().signIn(options).then(function (success) {
+        }, function (fail) {
+        });
     }
 };
 

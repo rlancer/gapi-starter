@@ -35,7 +35,7 @@ module.exports = React.createClass({
     },
     toggleSignIn: function () {
         if (!googleApiLoader.getAuth2().isSignedIn.get())
-            googleApiLoader.getAuth2().signIn();
+            googleApiLoader.signIn();
     },
     render: function () {
 
